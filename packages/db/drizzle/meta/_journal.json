@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1775888116962,
+      "tag": "0000_elite_yellowjacket",
+      "breakpoints": true
+    }
+  ]
+}

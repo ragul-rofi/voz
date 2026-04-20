@@ -1,0 +1,38 @@
+{
+  "name": "@voz/ai-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./llm": {
+      "types": "./dist/llm/index.d.ts",
+      "default": "./dist/llm/index.js"
+    },
+    "./language": {
+      "types": "./dist/language/config.d.ts",
+      "default": "./dist/language/config.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run -c vitest.config.ts"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@upstash/redis": "^1.34.3",
+    "@voz/shared": "workspace:*",
+    "groq-sdk": "^0.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^2.1.8"
+  }
+}

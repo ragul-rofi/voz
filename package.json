@@ -1,0 +1,41 @@
+{
+  "name": "voz",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "dev:api": "pnpm --filter @voz/api dev",
+    "dev:web": "pnpm --filter @voz/web dev",
+    "dev:worker": "pnpm --filter @voz/api worker",
+    "dev:ws": "pnpm --filter @voz/api ws",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "turbo run format",
+    "start:api": "pnpm --filter @voz/api start",
+    "start:web": "pnpm --filter @voz/web start",
+    "start:worker": "pnpm --filter @voz/api start:worker",
+    "start:ws": "pnpm --filter @voz/api start:ws",
+    "start:stack": "node ./scripts/start-stack.mjs",
+    "start:stack:prod": "pnpm build && node ./scripts/start-stack.mjs",
+    "db:generate": "pnpm --filter @voz/db db:generate",
+    "db:migrate": "pnpm --filter @voz/db db:migrate",
+    "db:studio": "pnpm --filter @voz/db db:studio"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2",
+    "turbo": "^2.0.14",
+    "typescript": "^5.6.3"
+  }
+}
